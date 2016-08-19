@@ -1,0 +1,9 @@
+setuptools
+numpy
+scikit-learn
+matplotlib
+pandas
+mne
+IPython
+tqdm
+scikit-image
