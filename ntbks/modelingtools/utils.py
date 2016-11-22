@@ -8,9 +8,19 @@ from sklearn.metrics import r2_score
 from sklearn import cross_validation as cv
 from itertools import product
 from skimage import filters as flt
+from matplotlib.colors import LinearSegmentedColormap
+
 
 # To reproduce results
 np.random.seed(1337)
+
+# Useful variables
+colors_score = ['#67a9cf', '#ef8a62']
+colors_activity = ['#7fbf7b', '#af8dc3']
+cmap_activity = LinearSegmentedColormap.from_list(
+    'activity', colors_activity)
+cmap_score = LinearSegmentedColormap.from_list(
+    'activity', colors_score)
 
 
 def delay_time_series(X, delays, sfreq):
@@ -44,15 +54,24 @@ def delay_time_series(X, delays, sfreq):
     return X_delayed
 
 
-def plot_activity_on_brain(activity, im, x, y, size_scale=1e4, ax=None):
+def plot_activity_on_brain(activity, im, x, y, size_scale=1e4, ax=None,
+                           cmap=None, with_cbar=True, **kwargs):
     """Plots activity for electrodes on a brain."""
     if ax is None:
         fig, ax = plt.subplots()
+    cmap = plt.cm.coolwarm if cmap is None else cmap
     ax.imshow(im)
     ax.scatter(x, y, s=np.abs(activity) * size_scale, c=activity,
-               cmap=plt.cm.RdBu_r)
+               cmap=cmap, **kwargs)
     ax.set_title('Channel Loadings')
     ax.set_axis_off()
+
+    if with_cbar is True:
+        y_colorscatter = np.linspace(0, im.shape[0] * .8, 20)
+        act_colorscatter = (y_colorscatter - np.mean(y_colorscatter))[::-1]
+        ax.scatter([im.shape[1] + 50]*len(y_colorscatter), y_colorscatter,
+                   c=act_colorscatter, s=np.abs(act_colorscatter) * 5,
+                   cmap=cmap)
     return ax
 
 
