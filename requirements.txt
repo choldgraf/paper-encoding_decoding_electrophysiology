@@ -1,7 +1,7 @@
 setuptools
 numpy
 scikit-learn
-matplotlib=2.0
+matplotlib==2
 pandas
 -e git://github.com/choldgraf/mne-python.git@add_receptive_field#egg=mne
 IPython
