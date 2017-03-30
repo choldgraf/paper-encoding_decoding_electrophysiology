@@ -3,7 +3,7 @@ numpy
 scikit-learn
 matplotlib==2
 pandas
--e git://github.com/choldgraf/mne-python.git@add_receptive_field#egg=mne
+-e git://github.com/choldgraf/mne-python.git
 IPython
 tqdm
 scikit-image
