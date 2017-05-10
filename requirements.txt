@@ -1,7 +1,7 @@
 setuptools
 numpy
 scikit-learn
-matplotlib==2
+matplotlib
 pandas
 -e git://github.com/mne-tools/mne-python.git#egg=mne
 IPython
