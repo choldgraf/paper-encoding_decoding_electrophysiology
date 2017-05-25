@@ -6,4 +6,4 @@ This is a short collection of notebooks describing how to create encoding and de
 
 If you'd like to run the code locally, simply clone this repository, make sure you have all the packages installed in the `requirements.txt` file, and open a jupyter notebook session from within the root folder.
 
-[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/choldgraf/paper-encoding_decoding_electrophysiology)
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/choldgraf/paper-encoding_decoding_electrophysiology/master?filepath=index.ipynb)
