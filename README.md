@@ -8,4 +8,4 @@ The notebooks focus on auditory analysis and machine learning using electrophysi
 
 If you'd like to run the code locally, simply clone this repository, make sure you have all the packages installed in the `requirements.txt` file, and open a jupyter notebook session from within the root folder.
 
-[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/choldgraf/paper-encoding_decoding_electrophysiology/f2d32d5?filepath=index.ipynb)
+[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/v2/gh/choldgraf/paper-encoding_decoding_electrophysiology/f2d32d5?filepath=index.ipynb)
